@@ -55,7 +55,7 @@ export const CreateTodoForm = () => {
           onKeyDown={(ev) => {
             if (ev.key === 'Enter') {
               ev.preventDefault()
-              if (todoBody === '') {
+              if (todoBody.trim() === '') {
                 setIsError(true)
               } else {
                 createTodo({
@@ -72,7 +72,7 @@ export const CreateTodoForm = () => {
           type="button"
           disabled={isCreatingTodo && isError}
           onClick={() => {
-            if (todoBody === '') {
+            if (todoBody.trim() === '') {
               setIsError(true)
             } else {
               createTodo({
